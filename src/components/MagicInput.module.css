@@ -1,0 +1,74 @@
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.inputWrapper {
+    position: relative;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #f59e0b, #ec4899);
+    padding: 4px;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
+    transition: transform 0.2s;
+}
+
+.inputWrapper:hover {
+    transform: scale(1.02);
+}
+
+.input {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    padding-right: 5rem;
+    border: none;
+    border-radius: 46px;
+    background: #fff;
+    color: var(--color-bg-deep);
+    font-size: 1.4rem;
+    font-family: var(--font-heading);
+    /* Use the fun font here too */
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input::placeholder {
+    color: #9ca3af;
+    font-style: italic;
+}
+
+.input:focus {
+    background: #fffbeb;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.sparkleBtn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.sparkleBtn:hover {
+    transform: translateY(-50%) scale(1.2) rotate(15deg);
+    filter: drop-shadow(0 0 5px gold);
+}
+
+.suggestion {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--color-text-main);
+    font-size: 1.1rem;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.6);
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}

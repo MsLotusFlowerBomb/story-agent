@@ -1,0 +1,116 @@
+.bookContainer {
+    perspective: 1500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.book {
+    width: 350px;
+    height: 500px;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 5px 15px 15px 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    transform-origin: left center;
+    transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+    border: 1px solid #e2e8f0;
+    overflow-y: auto;
+}
+
+.cover {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--color-accent-indigo), var(--color-accent-pink));
+    color: white;
+    text-align: center;
+    border-radius: 5px 15px 15px 5px;
+}
+
+.pageImage {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.pageText {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #334155;
+    flex-grow: 1;
+}
+
+.pageNum {
+    align-self: flex-end;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-top: 1rem;
+}
+
+.flipped {
+    transform: rotateY(-180deg);
+    visibility: hidden;
+    /* Hide back for simple effect, or double-sided logic needed */
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+}
+
+.navBtn {
+    background: white;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--color-bg-deep);
+    transition: transform 0.1s;
+}
+
+.navBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.readBtn {
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.readBtn:hover {
+    transform: scale(1.05);
+}

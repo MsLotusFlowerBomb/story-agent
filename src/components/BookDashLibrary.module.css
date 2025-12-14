@@ -1,0 +1,114 @@
+.container {
+    margin-bottom: 2rem;
+    width: 100%;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.heading {
+    font-size: 1.5rem;
+    color: var(--color-text-light); /* Assuming this var exists, else white */
+    margin-bottom: 0.2rem;
+    font-family: var(--font-heading);
+}
+
+.subheading {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem;
+}
+
+.scrollRow {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    /* Hide scrollbar but keep functionality */
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-accent-gold) transparent;
+}
+
+.scrollRow::-webkit-scrollbar {
+    height: 6px;
+}
+
+.scrollRow::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.scrollRow::-webkit-scrollbar-thumb {
+    background: var(--color-accent-gold);
+    border-radius: 10px;
+}
+
+.bookCard {
+    flex: 0 0 160px; /* Fixed width */
+    cursor: pointer;
+    transition: transform 0.2s, filter 0.2s;
+}
+
+.bookCard:hover {
+    transform: translateY(-5px);
+}
+
+.coverWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.coverImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.bookCard:hover .coverImage {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.bookCard:hover .overlay {
+    opacity: 1;
+}
+
+.playIcon {
+    font-size: 2rem;
+    color: white;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+.bookTitle {
+    font-size: 1rem;
+    margin: 0.5rem 0 0.1rem 0;
+    color: white;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.author {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
